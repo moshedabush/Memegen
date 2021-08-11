@@ -18,13 +18,13 @@ header img{
     height: 3vh;
 }
 
-.main-content{
-    margin-inline-start: 1vh;
-    margin-inline-end: 1vh;
-    gap: 1vh;
-}
+/* .main-content{
+} */
 
 .memes-layout img{
+    margin-inline-start: 0.6vh;
+    /* margin-inline-end: 0.5vh; */
+    /* gap: 0.5vh; */
     height: 32.5vh;
     width: 32.5vw;
     object-fit: cover;
@@ -34,7 +34,17 @@ header img{
     height: 3vh;
 }
 
-
+.about-modal {
+    background-color:rgba(0, 0, 0, 0.65);
+    color: whitesmoke;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    height: 100%; 
+    z-index: 1;
+}
 
 
 
@@ -44,6 +54,14 @@ header img{
 
 
 /* HELPERS */
+
+.margin-center{
+margin-block-start: 50vh;
+}
+
+.display-none {
+    display: none;
+}
 
 /* flex helpers */
 

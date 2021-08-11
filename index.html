@@ -1,41 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title >Memegen-</title>
+    <title>Memegen-</title>
 </head>
 
 <body>
-<header class="main-header flex flex-direction-row ">
-<img class="logo" src="img/LOGO.png" >
-<div class="main-nav clean-list flex">
-    <li><a class="btn-gallery" data-trans="gallery" href=""></a>Gallery</li> 
-    <li><a class="btn-memes" href="" data-trans="memes" ></a>Memes</li> 
-    <li><a class="btn-about" href="" data-trans="about" ></a>About</li>
-</div>
-</header>
-<div class="tags-menu flex align-center" >
-    <form class="add-book-form">
-        <input name="meme-tag" type="txt" id="meme-tag" data-trans="meme-tag"
-        placeholder="Enter search keyword" required />
-    </form>
-</div>
 
-<main class="main-content flex memes-layout">
+    <header class="main-header flex flex-direction-row ">
 
-    <img src="img/memes/003.jpg" alt="">
-    <img src="img/memes/004.jpg" alt="">
-    <img src="img/memes/005.jpg" alt="">
+        <img class="logo" src="img/LOGO.png">
+        <div class="main-nav clean-list flex ">
+            <li><a class="btn-gallery" data-trans="gallery" href="">Gallery</a></li>
+            <li><a class="btn-memes" href="" data-trans="memes">Memes</a></li>
+            <li><a class="btn-about" href="" data-trans="about" onclick="onAboutModal()">About</a></li>
+        </div>
+    </header>
 
-</main>
+    <main class="main-content">
+
+        <div class="about-modal" hidden>
+            <!-- <div class="margin-center">
+                <button onclick="onCloseAboutModal()"">X</button>
+                <p>Created by:</p>
+                <p>Moshe Dabush</p>  
+                <p> visit my git hub:</p>
+                <a href=" https://github.com/moshedabush?tab=repositories" target="_blank">To Moshe's github</a>
+            </div> -->
+        </div>
+
+        <div class="tags-menu flex align-center">
+            <form class="add-book-form">
+                <input name="meme-tag" type="txt" id="meme-tag" data-trans="meme-tag" placeholder="Enter search keyword"
+                    required />
+            </form>
+        </div>
+
+        <div class="memes-layout flex">
+            <img src="img/memes/003.jpg" alt="">
+            <img src="img/memes/004.jpg" alt="">
+            <img src="img/memes/005.jpg" alt="">
+        </div>
+
+    </main>
 
 
 
 
-<script src="js/main-controller.js"></script>
+    <script src="js/main-controller.js"></script>
 
 </body>
 
