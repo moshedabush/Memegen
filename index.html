@@ -5,31 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Memegen-</title>
+    <title >Memegen-</title>
 </head>
 
 <body>
 <header class="main-header flex flex-direction-row ">
 <img class="logo" src="img/LOGO.png" >
 <div class="main-nav clean-list flex">
-    <li><a class="btn-gallery" href=""></a>Gallery</li>
-    <li><a class="btn-memes" href=""></a>Memes</li>
-    <li><a class="btn-about" href=""></a>About</li>
+    <li><a class="btn-gallery" data-trans="gallery" href=""></a>Gallery</li> 
+    <li><a class="btn-memes" href="" data-trans="memes" ></a>Memes</li> 
+    <li><a class="btn-about" href="" data-trans="about" ></a>About</li>
 </div>
 </header>
-    
+<div class="tags-menu flex align-center" >
+    <form class="add-book-form">
+        <input name="meme-tag" type="txt" id="meme-tag" data-trans="meme-tag"
+        placeholder="Enter search keyword" required />
+    </form>
+</div>
+
+<main class="main-content flex memes-layout">
+
+    <img src="img/memes/003.jpg" alt="">
+    <img src="img/memes/004.jpg" alt="">
+    <img src="img/memes/005.jpg" alt="">
+
+</main>
 
 
 
 
-
-
-
-
+<script src="js/main-controller.js"></script>
 
 </body>
-
-
-
 
 </html>

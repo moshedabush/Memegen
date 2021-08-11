@@ -7,7 +7,7 @@ body{
 }
 
 .main-header{
-    height: 20vh;
+    height: 10vh;
     justify-content: space-around;
     flex-wrap: wrap;
     align-content: center;
@@ -18,7 +18,21 @@ header img{
     height: 3vh;
 }
 
+.main-content{
+    margin-inline-start: 1vh;
+    margin-inline-end: 1vh;
+    gap: 1vh;
+}
 
+.memes-layout img{
+    height: 32.5vh;
+    width: 32.5vw;
+    object-fit: cover;
+}
+
+.tags-menu{
+    height: 3vh;
+}
 
 
 
