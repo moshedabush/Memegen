@@ -18,6 +18,12 @@ header img{
     height: 3vh;
 }
 
+.subtitle{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
 .memes-layout img{
     margin-inline-start: 0.5vh;
     height: 32.5vh;

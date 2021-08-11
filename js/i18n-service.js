@@ -15,7 +15,7 @@ var gTrans = {
     },
     'meme-tag':{
         en: 'Enter search keyword',
-        he: 'הזן האשטאג לחיפוש'
+        he: 'הזן את האשטאג לחיפוש'
     }
 }
 var gCurrLang = 'en';

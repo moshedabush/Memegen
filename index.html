@@ -9,7 +9,7 @@
     <title>Memegen-</title>
 </head>
 
-<body>
+<body onload="onInit()">
 
     <header class="main-header flex flex-direction-row ">
 
@@ -24,31 +24,28 @@
             </select>
         </div>
     </header>
-
+    
+    <div class="about-modal" hidden></div>
     <main class="main-content">
-
-        <div class="about-modal" hidden></div>
-
         <div class="tags-menu flex align-center">
             <form class="add-book-form">
                 <input name="meme-tag" type="txt" id="meme-tag" data-trans="meme-tag" placeholder="Enter search keyword"
                     required />
             </form>
+            <div class="keywords-container"></div>
         </div>
-
-        <div class="memes-layout flex">
+        <div class="memes-container"></div>
+        <!-- <div class="memes-layout flex">
             <img src="img/memes/003.jpg" alt="">
             <img src="img/memes/004.jpg" alt="">
             <img src="img/memes/005.jpg" alt="">
-        </div>
+        </div> -->
 
     </main>
 
-
-
-    
     <script src="js/i18n-service.js"></script>
-    <script src="js/meme-server.js"></script>
+    <script src="js/util-service.js"></script>
+    <script src="js/meme-service.js"></script>
     <script src="js/main-controller.js"></script>
 
 </body>
