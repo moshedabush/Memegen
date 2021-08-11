@@ -18,6 +18,13 @@ var gMeme = {selectedImgId: 5,selectedLineIdx: 0,
 }
 
 
+function getImgUrl(id){
+    let img = gImgs.findIndex(function (img) {
+        return img.id === id;
+    })
+    return img.url;
+}
+
 
 function setMemeImg(id, imgSrc) {
     if (id < 0) {

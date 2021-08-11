@@ -7,7 +7,7 @@ var gTrans = {
     },
     memes:{
         en: 'Memes',
-        he: 'מימים'
+        he: 'מימס'
     },
     about:{
         en: 'About',

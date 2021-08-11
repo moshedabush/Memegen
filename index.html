@@ -15,7 +15,7 @@
 
         <img class="logo" src="img/LOGO.png">
         <div class="main-nav clean-list flex ">
-            <li><a class="btn-gallery" href="#" data-trans="gallery">Gallery</a></li>
+            <li><a class="btn-gallery" href="#" data-trans="gallery" onclick="onShowGallery()">Gallery</a></li>
             <li><a class="btn-memes" href="#" data-trans="memes">Memes</a></li>
             <li><a class="btn-about" href="#" data-trans="about" onclick="onAboutModal()">About</a></li>
             <select onchange="onSetLang(this.value)" class="subtitle">
@@ -25,8 +25,20 @@
         </div>
     </header>
     
-    <div class="about-modal" hidden></div>
     <main class="main-content">
+
+        <div class="about-modal" hidden></div>
+
+        <div class="img-editor" hidden>
+            <div class="canvas-container">
+                <canvas id="canvas"></canvas>
+                <div class="img-url"></div>
+                <div class="editor-tools">
+
+                </div>
+            </div>
+        </div>
+
         <div class="tags-menu flex align-center">
             <form class="add-book-form">
                 <input name="meme-tag" type="txt" id="meme-tag" data-trans="meme-tag" placeholder="Enter search keyword"
@@ -35,11 +47,6 @@
             <div class="keywords-container"></div>
         </div>
         <div class="memes-container"></div>
-        <!-- <div class="memes-layout flex">
-            <img src="img/memes/003.jpg" alt="">
-            <img src="img/memes/004.jpg" alt="">
-            <img src="img/memes/005.jpg" alt="">
-        </div> -->
 
     </main>
 

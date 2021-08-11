@@ -15,7 +15,7 @@ function renderGallery() {
     document.querySelector('.memes-container').innerHTML = strHtml;
 }
 
-function renderKeywords(){
+function renderKeywords() {
     let keywords = getKeywords();
     // let strHtml = keywords;
     let strHtml = keywords.map((keyword) => {
@@ -25,8 +25,11 @@ function renderKeywords(){
 }
 
 function onChooseImg(id = -1) {
-    setMemeImg(id);
-    document.querySelector('.main-content').classList.add('hidden');
+    // let imgUrl = getImgUrl(id);
+    // console.log(imgUrl);
+    document.querySelector('.img-editor').hidden = false;
+    // let srtHtml = `<img src="${imgUrl}" alt="" style="display: none;">`;
+    // document.querySelector('img-url').innerHTML = srtHtml;
 }
 
 
@@ -56,5 +59,9 @@ function onAboutModal() {
 }
 
 function onCloseAboutModal() {
-    let elAboutModal = document.querySelector('.about-modal').hidden = true;
+    document.querySelector('.about-modal').hidden = true;
+}
+
+function onShowGallery() {
+    document.querySelector('.img-editor').hidden = true;
 }
