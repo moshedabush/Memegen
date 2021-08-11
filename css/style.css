@@ -5,3 +5,58 @@
 body{
     margin: 0;
 }
+
+.main-header{
+    height: 20vh;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: orange;
+}
+
+header img{
+    height: 3vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* HELPERS */
+
+/* flex helpers */
+
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.flex-direction-column{
+    flex-direction: column;
+}
+
+.flex.flex-direction-row{
+    flex-direction: row;
+}
+
+/* list-helpers */
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
