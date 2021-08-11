@@ -1,8 +1,32 @@
 'use strict'
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+function onSetLang(lang) {
+    setLang(lang);
+    if (lang === 'he') {
+        document.body.classList.add('rtl')
+    } else {
+        document.body.classList.remove('rtl')
+    }
+    doTrans();
+    // renderBooks();
+}
+
 function onAboutModal(){
-    var elAboutModal = document.querySelector('.about-modal');
-    var aboutInfo = `<div class="margin-center">
+    let elAboutModal = document.querySelector('.about-modal');
+    let aboutInfo = `<div class="margin-center">
     <button onclick="onCloseAboutModal()"">X</button>
     <p>Created by:</p>
     <p>Moshe Dabush</p>  

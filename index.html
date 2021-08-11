@@ -15,23 +15,19 @@
 
         <img class="logo" src="img/LOGO.png">
         <div class="main-nav clean-list flex ">
-            <li><a class="btn-gallery" data-trans="gallery" href="">Gallery</a></li>
-            <li><a class="btn-memes" href="" data-trans="memes">Memes</a></li>
-            <li><a class="btn-about" href="" data-trans="about" onclick="onAboutModal()">About</a></li>
+            <li><a class="btn-gallery" href="#" data-trans="gallery">Gallery</a></li>
+            <li><a class="btn-memes" href="#" data-trans="memes">Memes</a></li>
+            <li><a class="btn-about" href="#" data-trans="about" onclick="onAboutModal()">About</a></li>
+            <select onchange="onSetLang(this.value)" class="subtitle">
+                <option value="en">English</option>
+                <option value="he">עברית</option>
+            </select>
         </div>
     </header>
 
     <main class="main-content">
 
-        <div class="about-modal" hidden>
-            <!-- <div class="margin-center">
-                <button onclick="onCloseAboutModal()"">X</button>
-                <p>Created by:</p>
-                <p>Moshe Dabush</p>  
-                <p> visit my git hub:</p>
-                <a href=" https://github.com/moshedabush?tab=repositories" target="_blank">To Moshe's github</a>
-            </div> -->
-        </div>
+        <div class="about-modal" hidden></div>
 
         <div class="tags-menu flex align-center">
             <form class="add-book-form">
@@ -50,7 +46,9 @@
 
 
 
-
+    
+    <script src="js/i18n-service.js"></script>
+    <script src="js/meme-server.js"></script>
     <script src="js/main-controller.js"></script>
 
 </body>
