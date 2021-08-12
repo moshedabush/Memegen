@@ -2,6 +2,7 @@
 
 var gCanvas;
 var gCtx;
+var gCurrImg;
 
 
 function onInit() {
@@ -38,11 +39,11 @@ function onChooseImg(id = -1) {
 }
 
 function renderCanvas(){
-    let img = new Image();
-    img.src = `img/memes/${getCanvasImg()}.jpg`;
-    gCanvas.width = img.width;
-    gCanvas.height = img.height;
-    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
+    gCurrImg = new Image();
+    gCurrImg.src = `img/memes/${getCanvasImg()}.jpg`;
+    gCanvas.width = gCurrImg.width;
+    gCanvas.height = gCurrImg.height;
+    gCtx.drawImage(gCurrImg, 0, 0, gCanvas.width, gCanvas.height);
 }
 
 function onSetLang(lang) {
@@ -87,6 +88,8 @@ function addLine(x = 200, y = 100) {
     let memeLine = document.querySelector('[name=meme-line]').value;
     setMemeLines(memeLine);
     let txt = getMemeLines();
+    y = getLineYPos();
+    x = getLineXpos();
     gCtx.font = '48px IMPACT';
     gCtx.fillStyle = 'white'
     gCtx.fillText(txt, x, y);

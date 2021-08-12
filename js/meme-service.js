@@ -66,3 +66,25 @@ function setUpAndDownIdxLine(){
     if(gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1;
     else gMeme.selectedLineIdx = 0;
 }
+
+function getLineYPos(){
+    if(gMeme.selectedLineIdx === 0){
+        return 100;
+    }else return gCurrImg.height-100;
+}
+
+function getLineXpos(){
+    if(gMeme.lines[0].align === 'left') return 100;
+    if(gMeme.lines[0].align === 'center') return gCurrImg.width/2;
+    if(gMeme.lines[0].align === 'right') return gCurrImg.width-100;
+}
+
+function setLineLeft(){
+    gMeme.lines[0].align = 'left';
+}
+function setLineCenter(){
+    gMeme.lines[0].align = 'center';
+}
+function setLineRight(){
+    gMeme.lines[0].align = 'right';
+}
