@@ -43,9 +43,10 @@
             <div class="canvas-container">
                 <canvas id="canvas"></canvas>
                 <div class="editor-tools">
-                    <input name="meme-line"  type="txt" id="meme-line" data-trans="add-line-placeholder"
+                    <input name="meme-line" type="txt" id="meme-line" data-trans="add-line-placeholder"
                         placeholder="Enter Text" required /> <br>
-                    <img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" onclick="setUpAndDownIdxLine()">
+                    <img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+                        onclick="setUpAndDownIdxLine()">
                     <img src="img/ICONS/add.png" onclick="addLine()">
                     <img src="img/ICONS/trash.png" onclick="addLine()"> <br>
                     <img src="img/ICONS/increase font - icon.png" onclick="addLine()">
@@ -59,12 +60,18 @@
                     </select>
                     <img src="img/ICONS/text stroke.png" onclick="addLine()">
                     <img src="img/ICONS/paint-board-and-brush.png" onclick="addLine()"> <br> <br>
-                    <button><a href="#" data-trans='download' onclick="downloadCanvas(this)" download="my-meme">Download</a></button>
+                    <button><a href="#" data-trans='download' onclick="downloadCanvas(this)"
+                            download="my-meme">Download</a></button>
                 </div>
             </div>
         </div>
 
     </main>
+
+    <footer>
+        <img class="logo" src="img/LOGO.png"> <br>
+        All rights reserved to Moshe Dabush <span class="date-year"></span> ©
+    </footer>
 
     <script src="js/i18n-service.js"></script>
     <script src="js/util-service.js"></script>

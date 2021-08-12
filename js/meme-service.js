@@ -75,7 +75,7 @@ function getLineYPos(){
 
 function getLineXpos(txtWidth){
     if(gMeme.lines[0].align === 'left') return 10;
-    if(gMeme.lines[0].align === 'center') return (gCurrImg.width/2)-txtWidth;
+    if(gMeme.lines[0].align === 'center') return (gCurrImg.width/2)-(txtWidth/2);
     if(gMeme.lines[0].align === 'right') return gCurrImg.width-txtWidth-10;
 }
 

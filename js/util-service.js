@@ -10,3 +10,11 @@ function makeId(length = 6) {
 
     return txt;
 }
+
+dateYear();
+
+function dateYear(){
+    var d = new Date();
+    var n = d.getFullYear();
+    document.querySelector('.date-year').innerHTML = n;
+}

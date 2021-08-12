@@ -15,7 +15,24 @@ body{
     background-color: orange;
 }
 
+footer{
+    margin-block-start: 1vh;
+    text-align: center;
+    background-color: orange;
+    flex-wrap: wrap;
+    color: #fff;
+    align-items: center;
+    height: 8vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
+footer img{
+    margin-block-start: 1vh;
+    height: 4vh;
+}
 
 header img{
     height: 3vh;
@@ -86,13 +103,13 @@ canvas{
     right: 0;
     left: 0;
     text-align: center;
-    height: 100%;
-    z-index: 1; 
+    /* height: 100%; */
+    /* z-index: 0;  */
 }
 
 .img-editor img {
     height: 4vh;
-    width: 4vw;
+    /* width: 4vw; */
 }
 
 .main-page{
