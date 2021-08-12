@@ -41,6 +41,7 @@ header img{
     height: 32.5vh;
     width: 32.5vw;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .tags-menu{

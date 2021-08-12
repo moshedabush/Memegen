@@ -38,7 +38,6 @@ var gMeme = {selectedImgId: 5,selectedLineIdx: 0,
 }
 
 
-
 function getCanvasImg(){
     return gMeme.selectedImgId;
 }
@@ -47,12 +46,12 @@ function setCanvasImg(imgId){
     gMeme.selectedImgId = imgId;
 }
 
-function setMemeImg(id, imgSrc) {
-    if (id < 0) {
-        id = makeId();
-        gImgs.push({ id, url: imgSrc, keywords: ['custom'] });
-    }
-    gMeme.selectedImgId = id;
+function setMemeLines(memeLine){
+    gMeme.lines[0].txt = memeLine;
+}
+
+function getMemeLines(){
+    return gMeme.lines[0].txt;
 }
 
 function getKeywords(){

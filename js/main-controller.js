@@ -76,3 +76,19 @@ function onShowGallery() {
     document.querySelector('.img-editor').hidden = true;
     document.querySelector('.main-page').style.display = 'block';
 }
+
+
+
+
+
+
+
+
+function drawText(x = 200, y = 100) {
+    let memeLine = document.querySelector('[name=meme-line]').value;
+    setMemeLines(memeLine);
+    let txt = getMemeLines();
+    gCtx.font = '48px IMPACT';
+    gCtx.fillStyle = 'white'
+    gCtx.fillText(txt, x, y);
+}
