@@ -35,6 +35,7 @@ function onChooseImg(id = -1) {
     setCanvasImg(id);
     document.querySelector('.img-editor').hidden = false;
     document.querySelector('.main-page').style.display = 'none';
+    document.querySelector('footer').classList.add('position-fixed');
     renderCanvas();
 }
 
@@ -76,22 +77,19 @@ function onCloseAboutModal() {
 function onShowGallery() {
     document.querySelector('.img-editor').hidden = true;
     document.querySelector('.main-page').style.display = 'block';
+    document.querySelector('footer').classList.remove('position-fixed');
 }
 
-
-
-
-
-
-
-function addLine(x = 200, y = 100) {
+function addLine() {
     let memeLine = document.querySelector('[name=meme-line]').value;
     setMemeLines(memeLine);
     let txt = getMemeLines();
+    let fontSize = getFontSize();
     let txtWidth = gCtx.measureText(txt).width;
-    y = getLineYPos();
-    x = getLineXpos(txtWidth);
-    gCtx.font = '48px IMPACT';
+    let y = getLineYPos();
+    let x = getLineXpos(txtWidth);
+    let fontType = getFontType();
+    gCtx.font = `${fontSize}px ${fontType}`;
     gCtx.fillStyle = 'white'
     gCtx.fillText(txt, x, y);
 }

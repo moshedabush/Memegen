@@ -33,7 +33,8 @@ var gMeme = {selectedImgId: 5,selectedLineIdx: 0,
         txt: 'I never eat Falafel',
         size: 20,
         align: 'left',
-        color: 'red'
+        color: 'red',
+        font: 'IMPACT'
     }]
 }
 
@@ -79,6 +80,18 @@ function getLineXpos(txtWidth){
     if(gMeme.lines[0].align === 'right') return gCurrImg.width-txtWidth-10;
 }
 
+function getFontSize(){
+    return gMeme.lines[0].size;
+}
+
+function getFontType(){
+    return gMeme.lines[0].font;
+}
+
+function setFontType(fontType){
+    gMeme.lines[0].font = fontType;
+}
+
 function setLineLeft(){
     gMeme.lines[0].align = 'left';
 }
@@ -88,3 +101,13 @@ function setLineCenter(){
 function setLineRight(){
     gMeme.lines[0].align = 'right';
 }
+
+function setBiggerFontSize(){
+    gMeme.lines[0].size += 10;
+}
+
+function setSmallerFontSize(){
+    gMeme.lines[0].size -= 10;
+}
+
+

@@ -24,6 +24,10 @@ var gTrans = {
     download:{
         en:'download',
         he:'שמירת תמונה'
+    },
+    'footer-txt':{
+        en: 'All rights reserved to Moshe Dabush',
+        he: 'כל הזכויות שמורות למשה דאבוש'
     }
 }
 var gCurrLang = 'en';

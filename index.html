@@ -49,12 +49,12 @@
                         onclick="setUpAndDownIdxLine()">
                     <img src="img/ICONS/add.png" onclick="addLine()">
                     <img src="img/ICONS/trash.png" onclick="addLine()"> <br>
-                    <img src="img/ICONS/increase font - icon.png" onclick="addLine()">
-                    <img src="img/ICONS/decrease font - icon.png" onclick="addLine()">
+                    <img src="img/ICONS/increase font - icon.png" onclick="setBiggerFontSize()">
+                    <img src="img/ICONS/decrease font - icon.png" onclick="setSmallerFontSize()">
                     <img src="img/ICONS/align-to-left.png" onclick="setLineLeft()">
                     <img src="img/ICONS/center-text-alignment.png" onclick="setLineCenter()">
                     <img src="img/ICONS/align-to-right.png" onclick="setLineRight()"> <br>
-                    <select onchange="" class="font-change">
+                    <select onchange="setFontType(this.value)" class="font-change">
                         <option value="impact">IMPACT</option>
                         <option value="ariel">ARIEL</option>
                     </select>
@@ -70,7 +70,7 @@
 
     <footer>
         <img class="logo" src="img/LOGO.png"> <br>
-        All rights reserved to Moshe Dabush <span class="date-year"></span> ©
+        <span data-trans="footer-txt"> All rights reserved to Moshe Dabush</span> <span class="date-year"></span> ©
     </footer>
 
     <script src="js/i18n-service.js"></script>
