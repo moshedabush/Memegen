@@ -16,6 +16,14 @@ var gTrans = {
     'meme-tag':{
         en: 'Enter search keyword',
         he: 'הזן את האשטאג לחיפוש'
+    },
+    'add-line-placeholder':{
+        en: 'Enter Text',
+        he: 'הכנס טקסט'
+    },
+    download:{
+        en:'download',
+        he:'שמירת תמונה'
     }
 }
 var gCurrLang = 'en';

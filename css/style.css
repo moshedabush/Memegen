@@ -86,8 +86,17 @@ canvas{
     z-index: 1; 
 }
 
+.img-editor img {
+    height: 4vh;
+    width: 4vw;
+}
+
 .main-page{
     display: block;
+}
+
+.rtl{
+    direction: rtl;
 }
 
 .main-nav > li > a {

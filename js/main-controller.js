@@ -83,12 +83,17 @@ function onShowGallery() {
 
 
 
-
-function drawText(x = 200, y = 100) {
+function addLine(x = 200, y = 100) {
     let memeLine = document.querySelector('[name=meme-line]').value;
     setMemeLines(memeLine);
     let txt = getMemeLines();
     gCtx.font = '48px IMPACT';
     gCtx.fillStyle = 'white'
     gCtx.fillText(txt, x, y);
+}
+
+function downloadCanvas(elLink) {
+    const data = gCanvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'my-meme.jpg';
 }

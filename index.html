@@ -27,12 +27,12 @@
 
     <main class="main-content">
         <div class="about-modal" hidden></div>
-        
+
         <div class="main-page">
             <div class="tags-menu flex align-center">
                 <form class="add-book-form">
-                    <input name="meme-tag" type="txt" id="meme-tag" data-trans="meme-tag" placeholder="Enter search keyword"
-                    required />
+                    <input name="meme-tag" type="txt" id="meme-tag" data-trans="meme-tag"
+                        placeholder="Enter search keyword" required />
                 </form>
                 <div class="keywords-container"></div>
             </div>
@@ -44,12 +44,26 @@
                 <canvas id="canvas"></canvas>
                 <div class="editor-tools">
                     <input name="meme-line" type="txt" id="meme-line" data-trans="add-line-placeholder"
-                placeholder="Enter Text" required />
-                    <button onclick="drawText()">+</button>
+                        placeholder="Enter Text" required /> <br>
+                    <img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" onclick="upAndDownIdxLine()">
+                    <img src="img/ICONS/add.png" onclick="addLine()">
+                    <img src="img/ICONS/trash.png" onclick="addLine()"> <br>
+                    <img src="img/ICONS/increase font - icon.png" onclick="addLine()">
+                    <img src="img/ICONS/decrease font - icon.png" onclick="addLine()">
+                    <img src="img/ICONS/align-to-left.png" onclick="addLine()">
+                    <img src="img/ICONS/center-text-alignment.png" onclick="addLine()">
+                    <img src="img/ICONS/align-to-right.png" onclick="addLine()"> <br>
+                    <select onchange="" class="font-change">
+                        <option value="impact">IMPACT</option>
+                        <option value="ariel">ARIEL</option>
+                    </select>
+                    <img src="img/ICONS/text stroke.png" onclick="addLine()">
+                    <img src="img/ICONS/paint-board-and-brush.png" onclick="addLine()"> <br> <br>
+                    <button><a href="#" data-trans='download' onclick="downloadCanvas(this)" download="my-meme">Download</a></button>
                 </div>
             </div>
         </div>
-        
+
     </main>
 
     <script src="js/i18n-service.js"></script>
