@@ -4,18 +4,25 @@
 
 body{
     margin: 0;
+    font-size: 1rem;
 }
 
 .main-header{
     height: 10vh;
     justify-content: space-around;
     flex-wrap: wrap;
-    align-content: center;
+    align-items: center;
     background-color: orange;
 }
 
+
+
 header img{
     height: 3vh;
+}
+
+.logo{
+    cursor: pointer;
 }
 
 .subtitle{
@@ -82,9 +89,22 @@ canvas{
     display: block;
 }
 
+.main-nav > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 4.313rem;
+    height: 4.125rem;
+    color: #fff;
+    transition: all 0.8s;
+    text-decoration: none;
+}
 
-
-
+.main-nav > li > a:hover{
+    color: rgb(14, 14, 14);
+    box-shadow: inset 0 -0.5vh 0 #141414;
+}
 
 /* HELPERS */
 
