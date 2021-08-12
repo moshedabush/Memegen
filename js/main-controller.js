@@ -25,6 +25,7 @@ function renderKeywords() {
 }
 
 function onChooseImg(id = -1) {
+    setCanvasImg();
     // let imgUrl = getImgUrl(id);
     // console.log(imgUrl);
     document.querySelector('.img-editor').hidden = false;
@@ -38,9 +39,9 @@ function onChooseImg(id = -1) {
 function onSetLang(lang) {
     setLang(lang);
     if (lang === 'he') {
-        document.body.classList.add('rtl')
+        document.body.classList.add('rtl');
     } else {
-        document.body.classList.remove('rtl')
+        document.body.classList.remove('rtl');
     }
     doTrans();
 }

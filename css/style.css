@@ -24,15 +24,16 @@ header img{
     right: 0;
 }
 
+.memes-layout {
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
 .memes-layout img{
-    margin-inline-start: 0.5vh;
     height: 32.5vh;
     width: 32.5vw;
     object-fit: cover;
-}
-
-.memes-layout img> *:not(:last-child) {
-    margin-inline-end: 0.5vh;
 }
 
 .tags-menu{
