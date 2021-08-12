@@ -88,8 +88,9 @@ function addLine(x = 200, y = 100) {
     let memeLine = document.querySelector('[name=meme-line]').value;
     setMemeLines(memeLine);
     let txt = getMemeLines();
+    let txtWidth = gCtx.measureText(txt).width;
     y = getLineYPos();
-    x = getLineXpos();
+    x = getLineXpos(txtWidth);
     gCtx.font = '48px IMPACT';
     gCtx.fillStyle = 'white'
     gCtx.fillText(txt, x, y);

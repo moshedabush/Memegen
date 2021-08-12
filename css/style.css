@@ -122,7 +122,8 @@ canvas{
 
 .editor-tools{
     margin-inline-end: 10vh;
-    margin-block-start: 5vh;
+    margin-block-start: 3vh;
+    /* direction: ltr; */
 }
 
 /* HELPERS */
