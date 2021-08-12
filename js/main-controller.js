@@ -98,5 +98,5 @@ function addLine(x = 200, y = 100) {
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL();
     elLink.href = data;
-    elLink.download = 'my-meme.jpg';
+    elLink.download = 'my-meme';
 }
