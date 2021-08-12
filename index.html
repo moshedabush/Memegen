@@ -58,8 +58,10 @@
                         <option value="impact">IMPACT</option>
                         <option value="ariel">ARIEL</option>
                     </select>
-                    <img src="img/ICONS/text stroke.png" onclick="addLine()">
-                    <img src="img/ICONS/paint-board-and-brush.png" onclick="addLine()"> <br> <br>
+                    <img src="img/ICONS/text stroke.png">
+                    <input class="btn-color" type="color" onchange="setStrokeColor(this.value)" value="#000">
+                    <img src="img/ICONS/paint-board-and-brush.png"> 
+                    <input class="btn-color" type="color" onchange="setTxtColor(this.value)" value="#ffffff"><br> <br>
                     <button><a href="#" data-trans='download' onclick="downloadCanvas(this)"
                             download="my-meme">Download</a></button>
                 </div>

@@ -99,6 +99,10 @@ canvas{
     align-items: flex-start;
 }
 
+.btn-color{
+    width: 4vh;
+    height: 4vh;
+}
 
 .img-editor {
     background-color:rgb(255, 255, 255);

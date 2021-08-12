@@ -89,9 +89,13 @@ function addLine() {
     let y = getLineYPos();
     let x = getLineXpos(txtWidth);
     let fontType = getFontType();
+    let txtColor = getTxtColor();
+    let strokeColor = getStrokeColor();
     gCtx.font = `${fontSize}px ${fontType}`;
-    gCtx.fillStyle = 'white'
+    gCtx.strokeStyle = `${strokeColor}`;
+    gCtx.fillStyle = `${txtColor}`;
     gCtx.fillText(txt, x, y);
+    gCtx.strokeText(`${txt}`, x,y);
 }
 
 function downloadCanvas(elLink) {
