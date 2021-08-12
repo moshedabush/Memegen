@@ -1,5 +1,9 @@
 'use strict'
 
+var gCanvas;
+var gCtx;
+
+
 function onInit() {
     renderGallery();
     // renderKeywords();
@@ -25,16 +29,21 @@ function renderKeywords() {
 }
 
 function onChooseImg(id = -1) {
-    setCanvasImg();
-    // let imgUrl = getImgUrl(id);
-    // console.log(imgUrl);
+    gCanvas = document.getElementById('canvas');
+    gCtx = gCanvas.getContext('2d');
+    setCanvasImg(id);
     document.querySelector('.img-editor').hidden = false;
-    // let srtHtml = `<img src="${imgUrl}" alt="" style="display: none;">`;
-    // document.querySelector('img-url').innerHTML = srtHtml;
+    document.querySelector('.main-page').style.display = 'none';
+    renderCanvas();
 }
 
-
-
+function renderCanvas(){
+    let img = new Image();
+    img.src = `img/memes/${getCanvasImg()}.jpg`;
+    gCanvas.width = img.width;
+    gCanvas.height = img.height;
+    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
+}
 
 function onSetLang(lang) {
     setLang(lang);
@@ -65,4 +74,5 @@ function onCloseAboutModal() {
 
 function onShowGallery() {
     document.querySelector('.img-editor').hidden = true;
+    document.querySelector('.main-page').style.display = 'block';
 }

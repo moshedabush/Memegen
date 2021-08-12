@@ -56,7 +56,7 @@ canvas{
     display: block;
     margin: 0 auto;
     background-color: white;
-    height: 65vh;
+    /* height: 65vh; */
     width: 85vw;
 }
 
@@ -78,6 +78,9 @@ canvas{
     z-index: 1; 
 }
 
+.main-page{
+    display: block;
+}
 
 
 

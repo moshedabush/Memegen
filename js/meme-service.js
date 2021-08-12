@@ -36,27 +36,16 @@ var gMeme = {selectedImgId: 5,selectedLineIdx: 0,
         color: 'red'
     }]
 }
-var gCanvas;
-var gCtx;
 
 
-function setCanvasImg(){
-    gCanvas = document.getElementById('canvas');
-    gCtx = gCanvas.getContext('2d');
-    // var elImg = document.querySelector('editImg');
-    var elImg = document.querySelector('img');
-    gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height);
+
+function getCanvasImg(){
+    return gMeme.selectedImgId;
 }
 
-
-
-// function getImgUrl(id){
-//     let img = gImgs.findIndex(function (img) {
-//         return img.id === id;
-//     })
-//     return img.url;
-// }
-
+function setCanvasImg(imgId){
+    gMeme.selectedImgId = imgId;
+}
 
 function setMemeImg(id, imgSrc) {
     if (id < 0) {
