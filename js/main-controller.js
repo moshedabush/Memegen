@@ -80,10 +80,15 @@ function onShowGallery() {
     document.querySelector('footer').classList.remove('position-fixed');
 }
 
-function onEditMemeTxt(elTxtInput) {
+function editMemeTxt(elTxtInput) {
     const txt = elTxtInput.value;
     console.log(txt);
     setMemeLines(txt);
+    renderCanvas();
+    addLine();
+}
+
+function updateTxtChanges(){
     renderCanvas();
     addLine();
 }
