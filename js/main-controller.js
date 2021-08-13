@@ -39,7 +39,7 @@ function onChooseImg(id = -1) {
     renderCanvas();
 }
 
-function renderCanvas(){
+function renderCanvas() {
     gCurrImg = new Image();
     gCurrImg.src = `img/memes/${getCanvasImg()}.jpg`;
     gCanvas.width = gCurrImg.width;
@@ -80,22 +80,30 @@ function onShowGallery() {
     document.querySelector('footer').classList.remove('position-fixed');
 }
 
+function onEditMemeTxt(elTxtInput) {
+    const txt = elTxtInput.value;
+    console.log(txt);
+    setMemeLines(txt);
+    renderCanvas();
+    addLine();
+}
+
 function addLine() {
-    let memeLine = document.querySelector('[name=meme-line]').value;
-    setMemeLines(memeLine);
+    // let memeLine = document.querySelector('[name=meme-line]').value;
+    // setMemeLines(memeLine);
     let txt = getMemeLines();
     let fontSize = getFontSize();
     let txtWidth = gCtx.measureText(txt).width;
-    let y = getLineYPos();
-    let x = getLineXpos(txtWidth);
-    let fontType = getFontType();
     let txtColor = getTxtColor();
+    let fontType = getFontType();
     let strokeColor = getStrokeColor();
+    let x = getLineXpos(txtWidth);
+    let y = getLineYPos();
     gCtx.font = `${fontSize}px ${fontType}`;
     gCtx.strokeStyle = `${strokeColor}`;
     gCtx.fillStyle = `${txtColor}`;
     gCtx.fillText(txt, x, y);
-    gCtx.strokeText(`${txt}`, x,y);
+    gCtx.strokeText(`${txt}`, x, y);
 }
 
 function downloadCanvas(elLink) {

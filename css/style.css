@@ -104,6 +104,10 @@ canvas{
     height: 4vh;
 }
 
+.rtl{
+    direction: rtl;
+}
+
 .img-editor {
     background-color:rgb(255, 255, 255);
     color: whitesmoke;
@@ -111,6 +115,7 @@ canvas{
     right: 0;
     left: 0;
     text-align: center;
+    direction: ltr;
     /* height: 100%; */
     /* z-index: 0;  */
 }
@@ -122,10 +127,6 @@ canvas{
 
 .main-page{
     display: block;
-}
-
-.rtl{
-    direction: rtl;
 }
 
 .main-nav > li > a {

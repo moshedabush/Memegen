@@ -43,8 +43,8 @@
             <div class="canvas-container">
                 <canvas id="canvas"></canvas>
                 <div class="editor-tools">
-                    <input name="meme-line" type="txt" id="meme-line" data-trans="add-line-placeholder"
-                        placeholder="Enter Text" required /> <br>
+                    <input  name="meme-line" type="txt" id="meme-line" oninput="onEditMemeTxt(this)"
+                     data-trans="add-line-placeholder" placeholder="Enter Text" required /> <br>
                     <img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
                         onclick="setUpAndDownIdxLine()">
                     <img src="img/ICONS/add.png" onclick="addLine()">
@@ -59,7 +59,7 @@
                         <option value="ariel">ARIEL</option>
                     </select>
                     <img src="img/ICONS/text stroke.png">
-                    <input class="btn-color" type="color" onchange="setStrokeColor(this.value)" value="#000">
+                    <input class="btn-color" type="color" onchange="setStrokeColor(this.value)" value="#000000">
                     <img src="img/ICONS/paint-board-and-brush.png"> 
                     <input class="btn-color" type="color" onchange="setTxtColor(this.value)" value="#ffffff"><br> <br>
                     <button><a href="#" data-trans='download' onclick="downloadCanvas(this)"
@@ -71,7 +71,7 @@
     </main>
 
     <footer>
-        <img class="logo" src="img/LOGO.png"> <br>
+        <img class="logo-footer" src="img/LOGO.png"> <br>
         <span data-trans="footer-txt"> All rights reserved to Moshe Dabush</span> <span class="date-year"></span> ©
     </footer>
 
