@@ -43,18 +43,18 @@
             <div class="canvas-container">
                 <canvas id="canvas"></canvas>
                 <div class="editor-tools">
-                    <input  name="meme-line" type="txt" id="meme-line" oninput="editMemeTxt(this)"
+                    <input  name="meme-line" type="txt" class="input-txt" id="meme-line" oninput="editMemeTxt(this)"
                      data-trans="add-line-placeholder" placeholder="Enter Text" required /> <br>
                     <img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
-                        onclick="setUpAndDownIdxLine(),updateTxtChanges()">
-                    <img src="img/ICONS/add.png" onclick="addLine()">
-                    <img src="img/ICONS/trash.png" onclick="addLine()"> <br>
-                    <img src="img/ICONS/increase font - icon.png" onclick="setBiggerFontSize(),updateTxtChanges()">
-                    <img src="img/ICONS/decrease font - icon.png" onclick="setSmallerFontSize(),updateTxtChanges()">
-                    <img src="img/ICONS/align-to-left.png" onclick="setLineLeft(),updateTxtChanges()">
-                    <img src="img/ICONS/center-text-alignment.png" onclick="setLineCenter(),updateTxtChanges()">
-                    <img src="img/ICONS/align-to-right.png" onclick="setLineRight(),updateTxtChanges()"> <br>
-                    <select onchange="setFontType(this.value),updateTxtChanges()" class="font-change">
+                     class="margin-tool" onclick="setUpAndDownIdxLine(),updateTxtChanges()">
+                    <img src="img/ICONS/add.png" class="margin-tool" onclick="addLine()">
+                    <img src="img/ICONS/trash.png" class="margin-tool" onclick="addLine()"> <br>
+                    <img src="img/ICONS/increase font - icon.png" class="margin-tool" onclick="setBiggerFontSize(),updateTxtChanges()">
+                    <img src="img/ICONS/decrease font - icon.png" class="margin-tool" onclick="setSmallerFontSize(),updateTxtChanges()">
+                    <img src="img/ICONS/align-to-left.png" class="margin-tool" onclick="setLineLeft(),updateTxtChanges()">
+                    <img src="img/ICONS/center-text-alignment.png" class="margin-tool" onclick="setLineCenter(),updateTxtChanges()">
+                    <img src="img/ICONS/align-to-right.png"  class="margin-tool" onclick="setLineRight(),updateTxtChanges()"> <br>
+                    <select onchange="setFontType(this.value),updateTxtChanges()" class="font-change margin-tool">
                         <option value="impact">IMPACT</option>
                         <option value="ariel">ARIEL</option>
                     </select>
