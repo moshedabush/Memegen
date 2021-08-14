@@ -75,6 +75,10 @@ function onCloseAboutModal() {
     document.querySelector('.about-modal').hidden = true;
 }
 
+function onOpenSavedMemes(){
+    openSavedMemes();
+}
+
 function onShowGallery() {
     document.querySelector('.img-editor').hidden = true;
     document.querySelector('.main-page').style.display = 'block';

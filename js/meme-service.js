@@ -1,5 +1,6 @@
 'use strict'
 
+const KEY = 'memeDB';
 var gKeywords = { 'reaction': 10, 'mood': 6, 'crazy': 5, 'baby': 5, 'politics': 4, 'cute': 4, 'pets': 4, 'happy': 3 };
 var gImgs = [
     { id: 1, url: 'img/memes/1.jpg', keywords: ['happy'] },
@@ -76,7 +77,7 @@ function getLineYPos() {
     else return gMeme.selectedLineIdx;
 }
 
-function lineYPosClickChange(ev){
+function lineYPosClickChange(ev) {
     gMeme.selectedLineIdx = ev.layerY;
     updateTxtChanges();
 }
@@ -139,4 +140,49 @@ function setTxtColor(color) {
 
 function setStrokeColor(color) {
     gMeme.lines[0].stroke = color;
+}
+
+function saveMeme() {
+    renderCanvas();
+    addLine();
+    _saveMemeToLocalStorage(KEY);
+}
+
+function _saveMemeToLocalStorage(KEY) {
+    saveToStorage(KEY, gMeme);
+}
+
+function openSavedMemes() {
+    let memeSaved = loadFromStorage(KEY);
+    if(!memeSaved)return;
+    let strHtml = '<div class="memes-layout flex">';
+    for (var i = 0; i < 1; i++) {
+        strHtml += `<img src="img/memes/${memeSaved.selectedImgId}.jpg"
+        onclick="savedMeme()">`;
+    }
+    strHtml += '</div>';
+    document.querySelector('.memes-container').innerHTML = strHtml;
+}
+
+function savedMeme(){
+    let memeSaved = loadFromStorage(KEY);
+    gCanvas = document.getElementById('canvas');
+    gCtx = gCanvas.getContext('2d');
+    document.querySelector('.img-editor').hidden = false;
+    document.querySelector('.main-page').style.display = 'none';
+    document.querySelector('footer').classList.add('position-fixed');
+    gCurrImg = new Image();
+    gCurrImg.src = `img/memes/${memeSaved.selectedImgId}.jpg`;
+    gCanvas.width = gCurrImg.width;
+    gCanvas.height = gCurrImg.height;
+    gCtx.drawImage(gCurrImg, 0, 0, gCanvas.width, gCanvas.height);
+    let txtWidth = gCtx.measureText(memeSaved.lines[0].txt).width;
+    let x = getLineXpos(txtWidth, memeSaved.lines[0].size);
+    if(memeSaved.selectedLineIdx === 0) memeSaved.selectedLineIdx = 100;
+    if(memeSaved.selectedLineIdx === 1) memeSaved.selectedLineIdx = gCurrImg.height - 100;
+    gCtx.font = `${memeSaved.lines[0].size}px ${memeSaved.lines[0].font}`;
+    gCtx.strokeStyle = `${memeSaved.lines[0].stroke}`;
+    gCtx.fillStyle = `${memeSaved.lines[0].color}`;
+    gCtx.fillText(memeSaved.lines[0].txt, x, memeSaved.selectedLineIdx);
+    gCtx.strokeText(`${memeSaved.lines[0].txt}`, x, memeSaved.selectedLineIdx);
 }

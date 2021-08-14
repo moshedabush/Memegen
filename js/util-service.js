@@ -18,3 +18,4 @@ function dateYear(){
     var n = d.getFullYear();
     document.querySelector('.date-year').innerHTML = n;
 }
+
