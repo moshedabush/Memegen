@@ -127,7 +127,7 @@ function deleteLine() {
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL();
     elLink.href = data;
-    elLink.download = 'my-meme.jpg';
+    // elLink.download = 'my-meme.jpg';
 }
 
 function onClickKeyword(keyword) {
