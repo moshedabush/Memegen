@@ -23,7 +23,7 @@ function renderGallery() {
 function renderKeywords() {
     let keywords = getKeywords();
     let strHtml = Object.keys(keywords).map((keyword) => {
-        return `<a href="#" onclick="onClickKeyword('${keyword}')" style="font-size:20px">${keyword}</a>`;
+        return `<a href="#" class="${keyword}" onclick="onClickKeyword('${keyword}')" style="font-size:20px">${keyword}</a>`;
     }).join('');
     document.querySelector('.keywords-container').innerHTML = strHtml;
 }
@@ -77,6 +77,7 @@ function onShowGallery() {
     document.querySelector('.img-editor').hidden = true;
     document.querySelector('.main-page').style.display = 'block';
     document.querySelector('footer').classList.remove('position-fixed');
+    renderGallery();
 }
 
 function editMemeTxt(elTxtInput) {
@@ -92,8 +93,6 @@ function updateTxtChanges(){
 }
 
 function addLine() {
-    // let memeLine = document.querySelector('[name=meme-line]').value;
-    // setMemeLines(memeLine);
     let txt = getMemeLines();
     let fontSize = getFontSize();
     let txtWidth = gCtx.measureText(txt).width;
@@ -113,4 +112,16 @@ function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL();
     elLink.href = data;
     elLink.download = 'my-meme';
+}
+
+function onClickKeyword(keyword){
+    document.querySelector(`.${keyword}`).classList.add('biggerPx');
+    let imgs = getImgs();
+    let strHtml = '<div class="memes-layout flex">';
+    strHtml += imgs.map((img) => {
+        if(img.keywords.includes(keyword))
+        return `<img src="${img.url}" onclick="onChooseImg(${img.id})">`;
+    }).join('');
+    strHtml += '</div>';
+    document.querySelector('.memes-container').innerHTML = strHtml;
 }

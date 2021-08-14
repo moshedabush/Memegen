@@ -116,13 +116,10 @@ canvas{
     left: 0;
     text-align: center;
     direction: ltr;
-    /* height: 100%; */
-    /* z-index: 0;  */
 }
 
 .img-editor img {
     height: 4vh;
-    /* width: 4vw; */
 }
 
 .main-page{
@@ -146,12 +143,13 @@ canvas{
     align-items: center;
     justify-content: center;
     flex: 1;
-    width: 4.313rem;
+    width: 5rem;
     height: 4.125rem;
     color: rgb(14, 14, 14);
     transition: all 0.8s;
     text-decoration: none; 
 }
+
 
 .keywords-container > a:hover{
     color: rgb(151, 143, 143);
@@ -172,7 +170,7 @@ canvas{
 /* HELPERS */
 
 .margin-center{
-margin-block-start: 40vh;
+    margin-block-start: 40vh;
 }
 
 .display-none {
@@ -211,4 +209,10 @@ margin-block-start: 40vh;
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+/* important !!! */
+
+.biggerPx{
+    font-size: 25px !important;
 }
