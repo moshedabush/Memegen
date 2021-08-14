@@ -1,6 +1,6 @@
 'use strict'
 
-var gKeywords = { 'happy': 3,'politics':4,'cute':4,'pets':4,'baby':5,'crazy':5,'reaction':10,'mood':6};
+var gKeywords = { 'reaction':10,'mood':6,'crazy':5,'baby':5,'politics':4,'cute':4,'pets':4,'happy': 3};
 var gImgs = [
     { id: 1, url: 'img/memes/1.jpg', keywords: ['happy'] },
     { id: 2, url: 'img/memes/2.jpg', keywords: ['politics','crazy'] },

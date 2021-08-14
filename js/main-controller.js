@@ -7,7 +7,7 @@ var gCurrImg;
 
 function onInit() {
     renderGallery();
-    // renderKeywords();
+    renderKeywords();
 }
 
 function renderGallery() {
@@ -22,9 +22,8 @@ function renderGallery() {
 
 function renderKeywords() {
     let keywords = getKeywords();
-    // let strHtml = keywords;
-    let strHtml = keywords.map((keyword) => {
-        return `<a href="#" onclick="onClickKeyword('${keyword}')" style="font-size:15px">${keyword}</a>`;
+    let strHtml = Object.keys(keywords).map((keyword) => {
+        return `<a href="#" onclick="onClickKeyword('${keyword}')" style="font-size:20px">${keyword}</a>`;
     }).join('');
     document.querySelector('.keywords-container').innerHTML = strHtml;
 }
