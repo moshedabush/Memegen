@@ -263,6 +263,11 @@ canvas {
     .editor-tools {
         margin-inline-end: unset;
     }
+    .keywords-container>a {
+        font-size: 15px !important;
+        width: 3rem !important;
+        height: 1.25rem !important;
+    }
 }
 
 @media (max-width :810px) {
