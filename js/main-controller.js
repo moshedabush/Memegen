@@ -82,7 +82,6 @@ function onShowGallery() {
 
 function editMemeTxt(elTxtInput) {
     const txt = elTxtInput.value;
-    console.log(txt);
     setMemeLines(txt);
     renderCanvas();
     addLine();
@@ -102,7 +101,7 @@ function addLine() {
     let txtColor = getTxtColor();
     let fontType = getFontType();
     let strokeColor = getStrokeColor();
-    let x = getLineXpos(txtWidth);
+    let x = getLineXpos(txtWidth,fontSize);
     let y = getLineYPos();
     gCtx.font = `${fontSize}px ${fontType}`;
     gCtx.strokeStyle = `${strokeColor}`;

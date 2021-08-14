@@ -75,10 +75,11 @@ function getLineYPos(){
     }else return gCurrImg.height-100;
 }
 
-function getLineXpos(txtWidth){
+function getLineXpos(txtWidth,fontSize){
     if(gMeme.lines[0].align === 'left') return 10;
-    if(gMeme.lines[0].align === 'center') return (gCurrImg.width/2)-(txtWidth/2);
-    if(gMeme.lines[0].align === 'right') return gCurrImg.width-txtWidth-10;
+    if(gMeme.lines[0].align === 'center') return gCurrImg.width/2-txtWidth-fontSize*2;
+    if(fontSize > 30) fontSize = fontSize*2;
+    if(gMeme.lines[0].align === 'right') return gCurrImg.width-txtWidth*2-10-fontSize*2;
 }
 
 function getFontSize(){
