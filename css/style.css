@@ -138,6 +138,11 @@ canvas{
     text-decoration: none;
 }
 
+.error-layout{
+    text-align: center;
+    font-size: 2rem;
+}
+
 .keywords-container > a {
     display: flex;
     align-items: center;

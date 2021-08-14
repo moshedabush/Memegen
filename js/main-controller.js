@@ -23,7 +23,7 @@ function renderGallery() {
 function renderKeywords() {
     let keywords = getKeywords();
     let strHtml = Object.keys(keywords).map((keyword) => {
-        return `<a href="#" class="${keyword}" onclick="onClickKeyword('${keyword}')" style="font-size:20px">${keyword}</a>`;
+        return `<a href="#" class="${keyword}" onclick="onClickKeyword('${keyword}'),biggerPx('${keyword}')" style="font-size:20px">${keyword}</a>`;
     }).join('');
     document.querySelector('.keywords-container').innerHTML = strHtml;
 }
@@ -87,7 +87,7 @@ function editMemeTxt(elTxtInput) {
     addLine();
 }
 
-function updateTxtChanges(){
+function updateTxtChanges() {
     renderCanvas();
     addLine();
 }
@@ -99,7 +99,7 @@ function addLine() {
     let txtColor = getTxtColor();
     let fontType = getFontType();
     let strokeColor = getStrokeColor();
-    let x = getLineXpos(txtWidth,fontSize);
+    let x = getLineXpos(txtWidth, fontSize);
     let y = getLineYPos();
     gCtx.font = `${fontSize}px ${fontType}`;
     gCtx.strokeStyle = `${strokeColor}`;
@@ -114,14 +114,22 @@ function downloadCanvas(elLink) {
     elLink.download = 'my-meme';
 }
 
-function onClickKeyword(keyword){
-    document.querySelector(`.${keyword}`).classList.add('biggerPx');
+function onClickKeyword(keyword) {
     let imgs = getImgs();
     let strHtml = '<div class="memes-layout flex">';
     strHtml += imgs.map((img) => {
-        if(img.keywords.includes(keyword))
-        return `<img src="${img.url}" onclick="onChooseImg(${img.id})">`;
+        if (img.keywords.includes(keyword))
+            return `<img src="${img.url}" onclick="onChooseImg(${img.id})">`;
     }).join('');
     strHtml += '</div>';
+    if(!strHtml.includes('img')){
+    strHtml = `<div class="error-layout"> Opss !!! we dosent have picture with the tag :
+     <span style="font-size:50px">${keyword}</span> please try another tag </div>`;
+    }
     document.querySelector('.memes-container').innerHTML = strHtml;
+    if(!keyword) renderGallery();
+}
+
+function biggerPx(keyword) {
+    document.querySelector(`.${keyword}`).classList.add('biggerPx');
 }
