@@ -41,7 +41,7 @@
 
         <div class="img-editor" hidden>
             <div class="canvas-container">
-                <canvas id="canvas"></canvas>
+                <canvas id="canvas" onclick="lineYPosClickChange(event)"></canvas>
                 <div class="editor-tools">
                     <input  name="meme-line" type="txt" class="input-txt" id="meme-line" oninput="editMemeTxt(this)"
                      data-trans="add-line-placeholder" placeholder="Enter Text" required /> <br>

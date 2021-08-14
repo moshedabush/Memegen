@@ -133,6 +133,7 @@ function onClickKeyword(keyword) {
      please try another tag </span></div>`;
     }
     document.querySelector('.memes-container').innerHTML = strHtml;
+    doTrans();
     if(!keyword) renderGallery();
 }
 

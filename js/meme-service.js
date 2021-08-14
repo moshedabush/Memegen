@@ -71,9 +71,14 @@ function setUpAndDownIdxLine() {
 }
 
 function getLineYPos() {
-    if (gMeme.selectedLineIdx === 0) {
-        return 100;
-    } else return gCurrImg.height - 100;
+    if (gMeme.selectedLineIdx === 0) return 100;
+    if (gMeme.selectedLineIdx === 1) return gCurrImg.height - 100;
+    else return gMeme.selectedLineIdx;
+}
+
+function lineYPosClickChange(ev){
+    gMeme.selectedLineIdx = ev.layerY;
+    updateTxtChanges();
 }
 
 function getLineXpos(txtWidth, fontSize) {
