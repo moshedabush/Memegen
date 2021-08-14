@@ -1,13 +1,13 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     font-size: 1rem;
 }
 
-.main-header{
+.main-header {
     height: 10vh;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -15,7 +15,7 @@ body{
     background-color: orange;
 }
 
-footer{
+footer {
     margin-block-start: 1vh;
     text-align: center;
     background-color: orange;
@@ -29,24 +29,24 @@ footer{
     z-index: 0;
 }
 
-.position-fixed{
+.position-fixed {
     position: fixed;
 }
 
-footer img{
+footer img {
     margin-block-start: 1vh;
     height: 4vh;
 }
 
-header img{
+header img {
     height: 3vh;
 }
 
-.logo{
+.logo {
     cursor: pointer;
 }
 
-.subtitle{
+.subtitle {
     position: fixed;
     top: 0;
     right: 0;
@@ -58,30 +58,30 @@ header img{
     justify-content: space-evenly;
 }
 
-.memes-layout img{
+.memes-layout img {
     height: 32.5vh;
     width: 32.5vw;
     object-fit: cover;
     cursor: pointer;
 }
 
-.tags-menu{
+.tags-menu {
     height: 3vh;
 }
 
 .about-modal {
-    background-color:rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     color: whitesmoke;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     text-align: center;
-    height: 100%; 
+    height: 100%;
     z-index: 2;
 }
 
-canvas{
+canvas {
     display: block;
     margin: 0 auto;
     background-color: white;
@@ -89,7 +89,7 @@ canvas{
     margin-block-start: 3vh;
 }
 
-.canvas-container{
+.canvas-container {
     display: flex;
     height: 90vh;
     background-color: rgb(199, 199, 199);
@@ -99,17 +99,17 @@ canvas{
     align-items: flex-start;
 }
 
-.btn-color{
+.btn-color {
     width: 4vh;
     height: 4vh;
 }
 
-.rtl{
+.rtl {
     direction: rtl;
 }
 
 .img-editor {
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     color: whitesmoke;
     position: fixed;
     right: 0;
@@ -122,11 +122,11 @@ canvas{
     height: 4vh;
 }
 
-.main-page{
+.main-page {
     display: block;
 }
 
-.main-nav > li > a {
+.main-nav>li>a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,12 +138,12 @@ canvas{
     text-decoration: none;
 }
 
-.error-layout{
+.error-layout {
     text-align: center;
     font-size: 2rem;
 }
 
-.keywords-container > a {
+.keywords-container>a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,29 +152,28 @@ canvas{
     height: 4.125rem;
     color: rgb(14, 14, 14);
     transition: all 0.8s;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
-
-.keywords-container > a:hover{
+.keywords-container>a:hover {
     color: rgb(151, 143, 143);
     box-shadow: inset 0 -0.5vh 0 #e7dbdb;
 }
 
-.main-nav > li > a:hover{
+.main-nav>li>a:hover {
     color: rgb(14, 14, 14);
     box-shadow: inset 0 -0.5vh 0 #141414;
 }
 
-.editor-tools{
-    margin-inline-end: 10vh;
+.editor-tools {
+    margin-inline-end: 3vh;
     margin-block-start: 3vh;
     /* direction: ltr; */
 }
 
 /* HELPERS */
 
-.margin-center{
+.margin-center {
     margin-block-start: 40vh;
 }
 
@@ -196,11 +195,11 @@ canvas{
     align-items: center;
 }
 
-.flex.flex-direction-column{
+.flex.flex-direction-column {
     flex-direction: column;
 }
 
-.flex.flex-direction-row{
+.flex.flex-direction-row {
     flex-direction: row;
 }
 
@@ -218,6 +217,27 @@ canvas{
 
 /* important !!! */
 
-.biggerPx{
+.biggerPx {
     font-size: 25px !important;
+}
+
+/* mobile-only ! */
+
+@media (max-width: 430px) {
+    .canvas-container {
+        display: flex;
+        height: 90vh;
+        background-color: rgb(199, 199, 199);
+        flex-wrap: wrap;
+        align-content: stretch;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+    canvas {
+        width: 90vw;
+    }
+    .editor-tools {
+        margin-inline-end: unset;
+    }
 }
