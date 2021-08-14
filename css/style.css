@@ -61,12 +61,16 @@ header img {
 .memes-layout img {
     height: 32.5vh;
     width: 32.5vw;
+    margin-block-start: 0.5vh;
     object-fit: cover;
     cursor: pointer;
 }
 
-.tags-menu {
-    height: 3vh;
+.search-tags{
+    /* width: 15vw; */
+    height: 4vh;
+    text-align: center;
+    /* margin-block-start: 1vh; */
 }
 
 .about-modal {
@@ -140,7 +144,7 @@ canvas {
 
 .error-layout {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .keywords-container>a {
@@ -155,10 +159,11 @@ canvas {
     text-decoration: none;
 }
 
-.input-txt{
+.input-txt {
     width: 30vw;
     height: 5vh;
     margin-block-end: 3vh;
+    text-align: center;
 }
 
 .keywords-container>a:hover {
@@ -177,12 +182,13 @@ canvas {
     /* direction: ltr; */
 }
 
-.margin-tool{
+.margin-tool {
     margin-inline-start: 1vw;
     margin-inline-end: 1vw;
     margin-block-start: 1vh;
     margin-block-end: 1vh;
 }
+
 /* HELPERS */
 
 .margin-center {
@@ -249,11 +255,27 @@ canvas {
     canvas {
         width: 90vw;
     }
-    .input-txt{
+    .input-txt {
         width: 70vw;
         margin-block-end: 3vh;
     }
     .editor-tools {
         margin-inline-end: unset;
+    }
+}
+
+@media (max-width :810px) {
+    .tags-menu {
+        flex-direction: column;
+        margin-block-start: 2vh;
+    }
+    .search-tags{
+        width: 65vw;
+        height: 4vh;
+        margin-block-start: 1vh;
+    }
+    .keywords-container>a {
+        width: 4rem;
+        height: 2rem;
     }
 }

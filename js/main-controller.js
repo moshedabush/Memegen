@@ -23,7 +23,8 @@ function renderGallery() {
 function renderKeywords() {
     let keywords = getKeywords();
     let strHtml = Object.keys(keywords).map((keyword) => {
-        return `<a href="#" class="${keyword}" onclick="onClickKeyword('${keyword}'),biggerPx('${keyword}')" style="font-size:20px">${keyword}</a>`;
+        return `<a href="#" class="${keyword}" onclick="onClickKeyword('${keyword}')
+        ,biggerPx('${keyword}')" style="font-size:20px">${keyword}</a>`;
     }).join('');
     document.querySelector('.keywords-container').innerHTML = strHtml;
 }
@@ -36,6 +37,7 @@ function onChooseImg(id = -1) {
     document.querySelector('.main-page').style.display = 'none';
     document.querySelector('footer').classList.add('position-fixed');
     renderCanvas();
+    document.querySelector('.input-txt').value = '';
 }
 
 function renderCanvas() {
@@ -77,6 +79,7 @@ function onShowGallery() {
     document.querySelector('.img-editor').hidden = true;
     document.querySelector('.main-page').style.display = 'block';
     document.querySelector('footer').classList.remove('position-fixed');
+    document.querySelector('.search-tags').value = '';
     renderGallery();
 }
 
@@ -115,6 +118,7 @@ function downloadCanvas(elLink) {
 }
 
 function onClickKeyword(keyword) {
+    keyword = keyword.toLowerCase();
     let imgs = getImgs();
     let strHtml = '<div class="memes-layout flex">';
     strHtml += imgs.map((img) => {
@@ -123,8 +127,10 @@ function onClickKeyword(keyword) {
     }).join('');
     strHtml += '</div>';
     if(!strHtml.includes('img')){
-    strHtml = `<div class="error-layout"> Opss !!! we dosent have picture with the tag :
-     <span style="font-size:50px">${keyword}</span> please try another tag </div>`;
+    strHtml = `<div class="error-layout"> <span data-trans="error-log-first"> Opss 
+    !!! we dosent have picture with the tag : </span>
+     <span style="font-size:50px">'${keyword}' </span><span data-trans="error-log-second"> 
+     please try another tag </span></div>`;
     }
     document.querySelector('.memes-container').innerHTML = strHtml;
     if(!keyword) renderGallery();
@@ -132,4 +138,5 @@ function onClickKeyword(keyword) {
 
 function biggerPx(keyword) {
     document.querySelector(`.${keyword}`).classList.add('biggerPx');
+    document.querySelector('.search-tags').value = '';
 }

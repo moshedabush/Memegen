@@ -28,6 +28,14 @@ var gTrans = {
     'footer-txt':{
         en: 'All rights reserved to Moshe Dabush',
         he: 'כל הזכויות שמורות למשה דאבוש'
+    },
+    'error-log-first':{
+        en:'Opss !!! we dosent have picture with the tag : ',
+        he:'אופס !! אין לנו במאגר תמונה עם האשטאג : '
+    },
+    'error-log-second':{
+        en:'please try another tag ',
+        he:'בבקשה תנסה/י אשטאג אחר '
     }
 }
 var gCurrLang = 'en';
