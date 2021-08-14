@@ -75,7 +75,7 @@ function onCloseAboutModal() {
     document.querySelector('.about-modal').hidden = true;
 }
 
-function onOpenSavedMemes(){
+function onOpenSavedMemes() {
     openSavedMemes();
 }
 
@@ -99,8 +99,11 @@ function updateTxtChanges() {
     addLine();
 }
 
-function addLine() {
-    let txt = getMemeLines();
+function addLine(txt = getMemeLines()) {
+    if (txt == 'null') {
+        deleteLine();
+        return;
+    }
     let fontSize = getFontSize();
     let txtWidth = gCtx.measureText(txt).width;
     let txtColor = getTxtColor();
@@ -113,6 +116,12 @@ function addLine() {
     gCtx.fillStyle = `${txtColor}`;
     gCtx.fillText(txt, x, y);
     gCtx.strokeText(`${txt}`, x, y);
+}
+
+function deleteLine() {
+    setMemeLines('');
+    renderCanvas();
+    document.querySelector('.input-txt').value = '';
 }
 
 function downloadCanvas(elLink) {
@@ -130,15 +139,15 @@ function onClickKeyword(keyword) {
             return `<img src="${img.url}" onclick="onChooseImg(${img.id})">`;
     }).join('');
     strHtml += '</div>';
-    if(!strHtml.includes('img')){
-    strHtml = `<div class="error-layout"> <span data-trans="error-log-first"> Opss 
+    if (!strHtml.includes('img')) {
+        strHtml = `<div class="error-layout"> <span data-trans="error-log-first"> Opss 
     !!! we dosent have picture with the tag : </span>
      <span style="font-size:50px">'${keyword}' </span><span data-trans="error-log-second"> 
      please try another tag </span></div>`;
     }
     document.querySelector('.memes-container').innerHTML = strHtml;
     doTrans();
-    if(!keyword) renderGallery();
+    if (!keyword) renderGallery();
 }
 
 function biggerPx(keyword) {

@@ -85,7 +85,7 @@ function lineYPosClickChange(ev) {
 function getLineXpos(txtWidth, fontSize) {
     if (gMeme.lines[0].align === 'left') return 10;
     if (gMeme.lines[0].align === 'center') {
-        if (fontSize > 30) fontSize = fontSize * 2;
+        if (fontSize > 30) fontSize = fontSize * 1.5;
         else fontSize = 0;
         return gCurrImg.width / 2 - txtWidth - fontSize;
     }
@@ -142,6 +142,13 @@ function setStrokeColor(color) {
     gMeme.lines[0].stroke = color;
 }
 
+
+function pushLine(){
+    //  gMeme.lines.unshift(gMeme.lines[0]);
+    //  gMeme.lines.push(gMeme.lines[1]);
+  }
+  
+
 function saveMeme() {
     renderCanvas();
     addLine();
@@ -153,6 +160,7 @@ function _saveMemeToLocalStorage(KEY) {
 }
 
 function openSavedMemes() {
+    onShowGallery();
     let memeSaved = loadFromStorage(KEY);
     if(!memeSaved)return;
     let strHtml = '<div class="memes-layout flex">';
