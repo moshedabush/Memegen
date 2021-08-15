@@ -12,19 +12,21 @@
 <body onload="onInit()">
 
     <header class="main-header flex flex-direction-row ">
-
+        
         <img class="logo" onclick="onShowGallery()" src="img/LOGO.png">
+        <div class="screen" onclick="toggleMenu()"></div>
+        <button class="btn-menu-toggle" onclick="toggleMenu()">☰</button>
         <div class="main-nav clean-list flex">
             <li><a class="btn-gallery flex" href="#" data-trans="gallery" onclick="onShowGallery()">Gallery</a></li>
-            <li><a class="btn-memes flex" href="#" data-trans="memes"onclick="onOpenSavedMemes()">Memes</a></li>
+            <li><a class="btn-memes flex" href="#" data-trans="memes" onclick="onOpenSavedMemes()">Memes</a></li>
             <li><a class="btn-about flex" href="#" data-trans="about" onclick="onAboutModal()">About</a></li>
-            <select onchange="onSetLang(this.value)" class="subtitle">
-                <option value="en">English</option>
-                <option value="he">עברית</option>
-            </select>
         </div>
+        <select onchange="onSetLang(this.value)" class="subtitle">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+        </select>
     </header>
-
+    
     <main class="main-content">
         <div class="about-modal" hidden></div>
 
@@ -41,30 +43,38 @@
 
         <div class="img-editor" hidden>
             <div class="canvas-container">
-                <canvas id="canvas" onclick="lineYPosClickChange(event)" ontouchmove="lineYPosClickChange(event)"></canvas>
+                <canvas id="canvas" onclick="lineYPosClickChange(event)"
+                    ontouchmove="lineYPosClickChange(event)"></canvas>
                 <div class="editor-tools">
-                    <input  name="meme-line" type="txt" class="input-txt" id="meme-line" oninput="editMemeTxt(this)"
-                     data-trans="add-line-placeholder" placeholder="Enter Text" required /> <br>
-                    <img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
-                    class="margin-tool" onclick="setUpAndDownIdxLine(),updateTxtChanges()">
+                    <input name="meme-line" type="txt" class="input-txt" id="meme-line" oninput="editMemeTxt(this)"
+                        data-trans="add-line-placeholder" placeholder="Enter Text" required /> <br>
+                    <img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" class="margin-tool"
+                        onclick="setUpAndDownIdxLine(),updateTxtChanges()">
                     <img src="img/ICONS/add.png" class="margin-tool" onclick="pushLine()">
-                    <img src="img/ICONS/trash.png" class="margin-tool" onclick="addLine('null')"> 
+                    <img src="img/ICONS/trash.png" class="margin-tool" onclick="addLine('null')">
                     <img src="img/ICONS/save.png" class="margin-tool" onclick="saveMeme()"> <br>
-                    <img src="img/ICONS/increase font - icon.png" class="margin-tool" onclick="setBiggerFontSize(),updateTxtChanges()">
-                    <img src="img/ICONS/decrease font - icon.png" class="margin-tool" onclick="setSmallerFontSize(),updateTxtChanges()">
-                    <img src="img/ICONS/align-to-left.png" class="margin-tool" onclick="setLineLeft(),updateTxtChanges()">
-                    <img src="img/ICONS/center-text-alignment.png" class="margin-tool" onclick="setLineCenter(),updateTxtChanges()">
-                    <img src="img/ICONS/align-to-right.png"  class="margin-tool" onclick="setLineRight(),updateTxtChanges()"> <br>
+                    <img src="img/ICONS/increase font - icon.png" class="margin-tool"
+                        onclick="setBiggerFontSize(),updateTxtChanges()">
+                    <img src="img/ICONS/decrease font - icon.png" class="margin-tool"
+                        onclick="setSmallerFontSize(),updateTxtChanges()">
+                    <img src="img/ICONS/align-to-left.png" class="margin-tool"
+                        onclick="setLineLeft(),updateTxtChanges()">
+                    <img src="img/ICONS/center-text-alignment.png" class="margin-tool"
+                        onclick="setLineCenter(),updateTxtChanges()">
+                    <img src="img/ICONS/align-to-right.png" class="margin-tool"
+                        onclick="setLineRight(),updateTxtChanges()"> <br>
                     <select onchange="setFontType(this.value),updateTxtChanges()" class="font-change margin-tool">
                         <option value="impact">IMPACT</option>
                         <option value="ariel">ARIEL</option>
                     </select>
                     <img src="img/ICONS/text stroke.png">
-                    <input class="btn-color" type="color" onchange="setStrokeColor(this.value),updateTxtChanges()" value="#000000">
-                    <img src="img/ICONS/paint-board-and-brush.png"> 
-                    <input class="btn-color" type="color" onchange="setTxtColor(this.value),updateTxtChanges()" value="#ffffff"><br> <br>
+                    <input class="btn-color" type="color" onchange="setStrokeColor(this.value),updateTxtChanges()"
+                        value="#000000">
+                    <img src="img/ICONS/paint-board-and-brush.png">
+                    <input class="btn-color" type="color" onchange="setTxtColor(this.value),updateTxtChanges()"
+                        value="#ffffff"><br> <br>
                     <button><a href="#" data-trans='download' onclick="downloadCanvas(this)"
-                        download="my-meme">Download</a></button>
+                            download="my-meme">Download</a></button>
                 </div>
             </div>
         </div>

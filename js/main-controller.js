@@ -127,7 +127,7 @@ function deleteLine() {
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL();
     elLink.href = data;
-    // elLink.download = 'my-meme.jpg';
+    elLink.download = 'my-meme.jpg';
 }
 
 function onClickKeyword(keyword) {
@@ -153,4 +153,8 @@ function onClickKeyword(keyword) {
 function biggerPx(keyword) {
     document.querySelector(`.${keyword}`).classList.add('biggerPx');
     document.querySelector('.search-tags').value = '';
+}
+
+function toggleMenu() {
+    document.body.classList.toggle('menu-open');
 }
