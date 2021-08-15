@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Memegen-</title>
+    <title>Memegen</title>
 </head>
 
 <body onload="onInit()">
@@ -14,8 +14,8 @@
     <header class="main-header flex flex-direction-row ">
         
         <img class="logo" onclick="onShowGallery()" src="img/LOGO.png">
-        <div class="screen" onclick="toggleMenu()"></div>
-        <button class="btn-menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="screen" onclick="onToggleMenu()"></div>
+        <button class="btn-menu-toggle" onclick="onToggleMenu()">☰</button>
         <div class="main-nav clean-list flex">
             <li><a class="btn-gallery flex" href="#" data-trans="gallery" onclick="onShowGallery()">Gallery</a></li>
             <li><a class="btn-memes flex" href="#" data-trans="memes" onclick="onOpenSavedMemes()">Memes</a></li>
@@ -52,7 +52,7 @@
                         onclick="setUpAndDownIdxLine(),updateTxtChanges()">
                     <img src="img/ICONS/add.png" class="margin-tool" onclick="pushLine()">
                     <img src="img/ICONS/trash.png" class="margin-tool" onclick="addLine('null')">
-                    <img src="img/ICONS/save.png" class="margin-tool" onclick="saveMeme()"> <br>
+                    <img src="img/ICONS/save.png" class="margin-tool" onclick="onSaveMeme()"> <br>
                     <img src="img/ICONS/increase font - icon.png" class="margin-tool"
                         onclick="setBiggerFontSize(),updateTxtChanges()">
                     <img src="img/ICONS/decrease font - icon.png" class="margin-tool"
@@ -86,10 +86,10 @@
         <span data-trans="footer-txt"> All rights reserved to Moshe Dabush</span> <span class="date-year"></span> ©
     </footer>
 
+    <script src="js/storage-service.js"></script>
     <script src="js/i18n-service.js"></script>
     <script src="js/util-service.js"></script>
     <script src="js/meme-service.js"></script>
-    <script src="js/storage-service.js"></script>
     <script src="js/main-controller.js"></script>
 
 </body>

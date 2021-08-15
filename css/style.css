@@ -71,10 +71,8 @@ header img {
 }
 
 .search-tags {
-    /* width: 15vw; */
     height: 4vh;
     text-align: center;
-    /* margin-block-start: 1vh; */
 }
 
 .about-modal {
@@ -183,7 +181,6 @@ canvas {
 .editor-tools {
     margin-inline-end: 3vh;
     margin-block-start: 3vh;
-    /* direction: ltr; */
 }
 
 .margin-tool {
@@ -241,7 +238,7 @@ canvas {
 /* important !!! */
 
 .biggerPx {
-    font-size: 25px !important;
+    font-size: 22px !important;
 }
 
 /* mobile-only ! */
@@ -257,6 +254,7 @@ canvas {
         align-items: center;
         flex-direction: column;
     }
+
     .btn-menu-toggle {
         display: block;
         color: white;
@@ -266,6 +264,7 @@ canvas {
         font-size: 1.4rem;
         cursor: pointer;
     }
+
     .main-nav {
         position: fixed;
         top: 0;
@@ -279,19 +278,27 @@ canvas {
         transform: translateX(100%);
         transition: transform .6s;
     }
+
     .main-nav>li>a {
         color: black;
     }
+
     body.menu-open .main-nav {
         transform: translateX(0);
         box-shadow: -8px 0px 20px rgb(0 0 0 / 20%);
     }
+
+    body.menu-open .subtitle {
+        display: none;
+    }
+
     .main-nav a {
         display: block;
         text-align: center;
         padding: 10px 0;
         border-bottom: 1px solid #e7e7e7;
     }
+
     .screen {
         position: fixed;
         top: 0;
@@ -305,28 +312,47 @@ canvas {
         pointer-events: none;
         transition: opacity .6s;
     }
+
     body.menu-open .screen {
         opacity: 1;
         pointer-events: auto;
     }
+
     /* .btn-gallery btn-memes */
+
     canvas {
         width: 90vw;
     }
+
     .input-txt {
         width: 70vw;
         margin-block-end: 3vh;
     }
+
     .editor-tools {
         margin-inline-end: unset;
     }
 }
 
 @media (max-width :515px) {
-    .keywords-container>a {
+    .keywords-container.flex.space-evenly>a {
         font-size: 16px !important;
-        width: 3rem !important;
-        height: 1.5rem !important;
+        width: 3rem;
+        height: 1.5rem;
+    }
+    .img-editor img {
+        height: 1.7vh!important;
+    }
+}
+
+@media(max-width:600px){
+    .img-editor img {
+        height: 2.1vh!important;
+    }
+}
+@media(max-width:685px){
+    .img-editor img {
+        height: 3vh;
     }
 }
 
@@ -335,13 +361,16 @@ canvas {
         flex-direction: column;
         margin-block-start: 2vh;
     }
+
     .search-tags {
         width: 65vw;
         height: 4vh;
         margin-block-start: 1vh;
     }
+    
     .keywords-container>a {
         width: 4rem;
         height: 2rem;
     }
+    
 }
